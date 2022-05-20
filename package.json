@@ -15,6 +15,7 @@
   "author": "Sritaj Kumar Patel",
   "license": "ISC",
   "devDependencies": {
+    "jsdoc": "^3.6.10",
     "lite-server": "^2.6.1"
   }
 }
