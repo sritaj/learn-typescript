@@ -1,10 +1,16 @@
 class Department {
   private name: string;
   private employee: string[] = [];
+  private readonly certifiedBy: string;
 
   //added example to showcase shortand of creation constructor with relevant variables along with regulr initialisation
-  constructor(private id: string, n: string) {
+  constructor(
+    private id: string,
+    n: string,
+    readonly level: string = "intermediate"
+  ) {
     this.name = n;
+    this.certifiedBy = "TMZ Labs";
   }
 
   //added example to showcase shortand of creation constructor with relevant variables
@@ -15,7 +21,7 @@ class Department {
    */
   describeDepartment() {
     console.log(
-      `This ${this.name} has been established in the year 1990 and registered with ID ${this.id}`
+      `This ${this.name} has been established in the year 1990 and registered with ID ${this.id} and certified by ${this.certifiedBy} with level ${this.level}`
     );
   }
 
@@ -37,9 +43,11 @@ departName.addEmployee("Max");
 
 departName.printEmployee();
 
-//specifying name key explicitly for departChoosen object, since describeDepartment() refers to name using this keyword; and for the below context if departChoosen doesn't have any name key then once the depart function is called it won't find name specified in the global context resulting in undefined value
+//specifying name and other variables key explicitly for departChoosen object, since describeDepartment() refers to name and other variables using this keyword; and for the below context if departChoosen doesn't have any name and other variables key then once the depart function is called it won't find name and other variables specified in the global context resulting in undefined value
 const departChoosen = {
   id: "XM10",
+  certifiedBy: "dmz corp",
+  level: "beginner",
   name: "Backend Engineers",
   depart: departName.describeDepartment,
 };
