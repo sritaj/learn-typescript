@@ -1,3 +1,6 @@
+/**
+ * Example Class to demonsrate Classes, Constructor, Private keyword, This keyword
+ */
 class Department {
   private name: string;
   private employee: string[] = [];
