@@ -32,6 +32,23 @@ class FictionNovels extends Novels {
         this.bookGenre
     );
   }
+
+  //static properties example
+  static hardShellBookCoverPrice = "999";
+  static softShellBookCoverPrice = "599";
+
+  /**
+   * static method example
+   */
+  static bookCover(type: string) {
+    if (type === "hc") {
+      return this.hardShellBookCoverPrice;
+    } else if (type === "sc") {
+      return this.softShellBookCoverPrice;
+    } else {
+      return "619";
+    }
+  }
 }
 
 const hpBooks = new FictionNovels("HP1", "JKRownling");
@@ -49,3 +66,7 @@ console.log("The recent sales figure is " + hpBooks.recentBookSales);
 
 hpBooks.setBookDetails("Fiction", "Fantansy");
 hpBooks.getBookInfo();
+
+//calling static methods and properties
+console.log(FictionNovels.bookCover("sc"));
+console.log(FictionNovels.hardShellBookCoverPrice);
