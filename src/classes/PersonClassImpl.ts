@@ -4,6 +4,7 @@
 class PersonClassImpl implements Person {
   name: string;
   age: number;
+  prefix: string = "Mr";
 
   constructor(personName: string, age: number) {
     this.name = personName;

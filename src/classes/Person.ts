@@ -4,6 +4,7 @@
 interface Person {
   name: string;
   age: number;
+  readonly prefix: string;
 
   greet(msg: string): void;
 }
@@ -14,9 +15,15 @@ let bday: Person;
 bday = {
   name: "Sritaj Kumar Patel",
   age: 32,
+  prefix: "Mr",
   greet(msg: string): void {
-    console.log(`${msg} ${this.name}, its your ${this.age}th birthday`);
+    console.log(
+      `${msg} ${this.prefix} ${this.name}, its your ${this.age}th birthday`
+    );
   },
 };
 
 bday.greet("Many Many Many Happy Returns of the day");
+
+//as prefix is set to readonly, the value once set cannot be changed
+//bday.prefix = "Master";
