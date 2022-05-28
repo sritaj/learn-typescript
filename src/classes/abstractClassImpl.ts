@@ -1,7 +1,7 @@
 /**
  * Class extending Abstract class and implementing methods and initialising properties
  */
-class abstractClassImpl extends abstractClass {
+class AbstractClassImpl extends AbstractClass {
   status = true;
 
   displayInfo(): void {

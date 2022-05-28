@@ -1,21 +1,21 @@
 /**
- * Example to showcase singletonclass with private static properties and static getInstance method
+ * Example to showcase SingletonClass with private static properties and static getInstance method
  */
-class singletonClass {
-  private static instance: singletonClass;
+class SingletonClass {
+  private static instance: SingletonClass;
 
   private constructor(msg: string) {
     console.log(msg);
   }
 
   static getInstance() {
-    if (singletonClass.instance) {
-      return singletonClass.instance;
+    if (SingletonClass.instance) {
+      return SingletonClass.instance;
     }
-    return new singletonClass("new instance of singleton class is created");
+    return new SingletonClass("new instance of singleton class is created");
   }
 }
 
-const initSingletonClass = singletonClass.getInstance();
+const initSingletonClass = SingletonClass.getInstance();
 
-const initSingletonClass2ndTime = singletonClass.getInstance();
+const initSingletonClass2ndTime = SingletonClass.getInstance();
