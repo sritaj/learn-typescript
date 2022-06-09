@@ -25,3 +25,18 @@ function merge<T, U>(objA: T, objB: U) {
 const mergeOne = merge({ name: "Max" }, { age: 30 });
 console.log(mergeOne.age);
 console.log(mergeOne.name);
+
+//for below assignment, when objB param is passed as 30 and is logged it will show only name and not age since Object.assign merge only objects
+const mergeTwo = merge({ name: "May" }, 30);
+console.log(mergeTwo);
+
+//to avoid above issue, the generic type can be specified with constraints as shown below
+function mergeWithConstraints<T extends object, U extends object>(
+  objA: T,
+  objB: U
+) {
+  return Object.assign(objA, objB);
+}
+
+//the below example will show compile type error as the 2nd param expect a object type specifically
+//const mergeWithConstrainstsExampleOne = mergeWithConstraints({ name: "May" }, 30);
