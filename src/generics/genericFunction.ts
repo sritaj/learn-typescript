@@ -40,3 +40,21 @@ function mergeWithConstraints<T extends object, U extends object>(
 
 //the below example will show compile type error as the 2nd param expect a object type specifically
 //const mergeWithConstrainstsExampleOne = mergeWithConstraints({ name: "May" }, 30);
+
+interface Lengthy {
+  length: number;
+}
+
+// generic function example by extending an interface
+function countAndDescribe<T extends Lengthy>(element: T): [T, string] {
+  let description = "Got no value.";
+  if (element.length === 1) {
+    description = `Got 1 elements.`;
+  } else if (element.length > 1) {
+    description = `Got ${element.length} elements.`;
+  }
+  return [element, description];
+}
+
+console.log(countAndDescribe("Hi"));
+console.log(countAndDescribe(""));
