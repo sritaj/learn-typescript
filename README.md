@@ -1,5 +1,7 @@
 # Learn Typescript
 
+Project containing examples on TypeScript usage
+
 ## Tech Stack
 
 1. Typescript
